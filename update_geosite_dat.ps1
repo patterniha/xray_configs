@@ -1,0 +1,26 @@
+﻿
+$current_file = ".\geosite.dat"
+$url = "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+
+if (Test-Path $current_file -PathType Leaf) {
+    $tmpfile = New-TemporaryFile
+    Start-BitsTransfer -Source "$url.sha256sum" -Destination $tmpfile
+    $new_checksum = (Get-Content -Path $tmpfile).Substring(0, 64).ToUpper()
+    if ($new_checksum -eq (Get-FileHash -Path $current_file).Hash) {
+        "Domains file is already up to date."
+    }
+    else {
+        Start-BitsTransfer -Source $url -Destination $tmpfile
+        if ($new_checksum -eq (Get-FileHash -Path $tmpfile).Hash) {
+            Copy-Item -Path $tmpfile -Destination $current_file
+            "Domains file updated successfully."
+        }
+        else {
+            "Domains file is invalid."
+        }
+    }
+}
+else {
+    Start-BitsTransfer -Source $url -Destination $current_file
+    "Domains file downloaded successfully."
+}
