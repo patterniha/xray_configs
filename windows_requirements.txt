@@ -1,0 +1,39 @@
+XRAY CORE:
+
+    https://github.com/XTLS/Xray-core/releases/latest/download/Xray-windows-64.zip
+
+WINDOWS CONFIG:
+
+    https://raw.githubusercontent.com/patterniha/xray_configs/refs/heads/main/config_windows.json
+
+GEO FILES:
+    
+    https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+    https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+    https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/iran.dat    
+
+PROXIFIER:
+
+    https://proxifier.com/download/ProxifierSetup.exe
+
+    keys:
+        KFZUS-F3JGV-T95Y7-BXGAS-5NHHP
+        T3ZWQ-P2738-3FJWS-YE7HT-6NA3K
+        KFZUS-F3JGV-T95Y7-BXGAS-5NHHP
+        65Z2L-P36BY-YWJYC-TMJZL-YDZ2S
+        SFZHH-2Y246-Z483L-EU92B-LNYUA
+        GSZVS-5W4WA-T9F2E-L3XUX-68473
+        FTZ8A-R3CP8-AVHYW-KKRMQ-SYDLS
+        Q3ZWN-QWLZG-32G22-SCJXZ-9B5S4
+        DAZPH-G39D3-R4QY7-9PVAY-VQ6BU
+        KLZ5G-X37YY-65ZYN-EUSV7-WPPBS
+        6JZUY-32TKX-TK9W7-DU387-9RWKZ
+
+YOGA DNS:
+
+    https://www.yogadns.com/download/YogaDNSSetup.exe
+
+    keys:
+        OSJ9H-S16M7-B2M32-S3M1J-OGBED
+        A67BJ-G28C7-90Q02-MAN3F-MI28M
+        707UA-210AN-SP83I-ACNGM-UKBPA
