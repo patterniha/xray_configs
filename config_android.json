@@ -1,4 +1,4 @@
-// config v18 android
+// config v19 android
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -134,11 +134,11 @@
             "protocol": ["bittorrent"]
            },
 
-           {"type": "field","outboundTag": "myblock",
+           {"type": "field","outboundTag": "mydirect",
             "network": "udp","protocol": ["quic"]
            },
            
-           {"type": "field","outboundTag": "myblock",
+           {"type": "field","outboundTag": "mydirect",
             "network": "udp","port": 443
            },
 
