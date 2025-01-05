@@ -1,4 +1,4 @@
-// config v19 windows
+// config v20 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -88,15 +88,35 @@
             }
           },
 
-      {
-            "tag": "myfragment",
+         {
+            "tag": "myfragmenttls",
             "protocol": "freedom",
             "settings": {
                 "domainStrategy": "ForceIP",
                 "fragment": {
                     "packets": "tlshello",
-                    "length": "24-31",
-                    "interval": "17-19"
+                    "length": "8",
+                    "interval": "0"
+                }
+            },
+          "streamSettings": {
+                "sockopt": {
+                    "dialerProxy": "myfragmenttcp"
+                   }
+            }
+
+            
+        },
+         
+         {
+            "tag": "myfragmenttcp",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIP",
+                "fragment": {
+                    "packets": "1-3",
+                    "length": "1",
+                    "interval": "1"
                 }
             }
             
@@ -145,19 +165,19 @@
             "network": "udp"
            },
            
-	   {"type": "field","outboundTag": "myfragment",
+	   {"type": "field","outboundTag": "myfragmenttls",
                 "ip": ["geoip:cloudflare"],
                 "protocol": ["tls"] , "network": "tcp"
            },
 
-           {"type": "field","outboundTag": "myfragment",
+           {"type": "field","outboundTag": "myfragmenttls",
                 "ip": ["geoip:cloudflare"],
                 "port": "443,2053,2083,2087,2096,8443", "network": "tcp"
            },
 
               
-           {"type": "field","outboundTag": "mydirect",
-                "ip": ["geoip:cloudflare"]
+           {"type": "field","outboundTag": "myfragmenttcp",
+                "ip": ["geoip:cloudflare"], "network": "tcp"
            },
 
            {"type": "field","outboundTag": "mydirect",
