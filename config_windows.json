@@ -1,4 +1,4 @@
-// config v20 windows
+// config v21 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -164,19 +164,8 @@
            {"type": "field","outboundTag": "mydirect",
             "network": "udp"
            },
-           
-	   {"type": "field","outboundTag": "myfragmenttls",
-                "ip": ["geoip:cloudflare"],
-                "protocol": ["tls"] , "network": "tcp"
-           },
-
+           	                            
            {"type": "field","outboundTag": "myfragmenttls",
-                "ip": ["geoip:cloudflare"],
-                "port": "443,2053,2083,2087,2096,8443", "network": "tcp"
-           },
-
-              
-           {"type": "field","outboundTag": "myfragmenttcp",
                 "ip": ["geoip:cloudflare"], "network": "tcp"
            },
 
