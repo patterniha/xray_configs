@@ -1,4 +1,4 @@
-// config v22 android
+// config v23 android
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -141,9 +141,7 @@
            {"type": "field","outboundTag": "mydirect",
             "inboundTag": ["mydnsQuery"], "network": "udp"
            },
-           {"type": "field","outboundTag": "myproxy",
-            "inboundTag": ["mydnsQuery"], "network": "tcp"
-           },           
+           
            {"type": "field","outboundTag": "mydirect",
                 "domain": ["geosite:private", "ext:iran.dat:all", "geosite:category-ir"] 
            },
