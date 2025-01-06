@@ -1,4 +1,4 @@
-// config v22 windows
+// config v23 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -140,9 +140,7 @@
            {"type": "field","outboundTag": "mydirect",
             "inboundTag": ["mydnsQuery"], "network": "udp"
            },
-           {"type": "field","outboundTag": "myproxy",
-            "inboundTag": ["mydnsQuery"], "network": "tcp"
-           },           
+           
            {"type": "field","outboundTag": "mydirect",
                 "domain": ["geosite:private", "ext:iran.dat:all", "geosite:category-ir"] 
            },
