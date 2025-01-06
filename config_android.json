@@ -1,4 +1,4 @@
-// config v21 android
+// config v22 android
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -165,15 +165,15 @@
            {"type": "field","outboundTag": "mydirect",
             "network": "udp"
            },
-           	                            
-           {"type": "field","outboundTag": "myfragmenttls",
-                "ip": ["geoip:cloudflare"], "network": "tcp"
-           },
 
            {"type": "field","outboundTag": "mydirect",
             "port": 25
            },
-
+           	                            
+           {"type": "field","outboundTag": "myfragmenttls",
+                "ip": ["geoip:cloudflare"], "network": "tcp"
+           },
+           
            {"type": "field","outboundTag": "myproxy",
             "port": "0-65535"
            }
