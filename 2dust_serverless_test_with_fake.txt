@@ -1,0 +1,175 @@
+
+{
+  "log": {
+    "loglevel": "warning","dnsLog": false
+  },
+   "dns":{"hosts": {
+"geosite:category-porn": ["10.10.34.36","2001:4188:2:600:10:10:34:36"],
+"geosite:category-ads-all": ["10.10.34.36","2001:4188:2:600:10:10:34:36"]
+},
+"servers": ["tcp://1.1.1.1"            
+], "tag": "mydnsQuery","disableFallback": true
+},
+  
+  "inbounds": [
+   {
+      "port": 12353,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "8.8.8.8",
+        "port": 53,
+        "network": "tcp,udp"        
+      },
+      "tag": "mydns-in"
+    },
+    {
+      "tag": "mysocks-in",
+      "port": 12308,
+      "protocol": "socks",
+      "sniffing": {
+            "enabled": true,
+            "destOverride": ["http", "tls", "quic"],
+            "metadataOnly": false,
+            "routeOnly": true
+                  },
+      "settings": {"udp": true}
+    }
+   
+  ],
+  "outbounds": [
+{
+      "tag": "fake-proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+                    {
+                        "address": "api.example.ir",
+                        "port": 443,
+                        "password": "bbf6908ecc6d4683ad715adf13d5645a"
+                    }
+                ]
+      }
+      
+    },  
+
+    
+
+        {
+            "protocol": "freedom",
+            "tag": "mydirect",
+            "settings": {"domainStrategy": "ForceIP"}
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "myblock"
+        },{
+      "protocol": "dns",
+      "tag": "mydns-out",
+      "settings": { "nonIPQuery": "skip", "network": "tcp", "address": "8.8.8.8", "port": 53},
+      "streamSettings": {
+                "sockopt": {
+                    "dialerProxy": "myfragmenttls"
+                   }
+            }
+          },
+
+         {
+            "tag": "myfragmenttls",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIP",
+                "fragment": {
+                    "packets": "tlshello",
+                    "length": "8",
+                    "interval": "0"
+                }
+            },
+          "streamSettings": {
+                "sockopt": {
+                    "dialerProxy": "myfragmenttcp"
+                   }
+            }
+
+            
+        },
+         
+         {
+            "tag": "myfragmenttcp",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIP",
+                "fragment": {
+                    "packets": "1-3",
+                    "length": "1",
+                    "interval": "1"
+                }
+            }
+            
+        }
+          
+  ],"routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+           {"type": "field","outboundTag": "myblock",
+            "domain": ["geosite:category-porn", "geosite:category-ads-all"]
+           },
+           {"type": "field","outboundTag": "myblock",
+            "ip": ["10.10.34.0/24", "2001:4188:2:600:10:10:34:36"]
+           },
+           {"type": "field","outboundTag": "mydns-out",
+            "inboundTag": ["mydns-in"]
+           },
+           {"type": "field","outboundTag": "mydns-out",
+            "inboundTag": ["mysocks-in"], "port": 53
+           },
+           {"type": "field","outboundTag": "mydirect",
+            "inboundTag": ["mydnsQuery"], "network": "udp"
+           },
+           
+           {"type": "field","outboundTag": "mydirect",
+                "domain": ["geosite:private", "ext:iran.dat:all", "geosite:category-ir"] 
+           },
+           {"type": "field","outboundTag": "mydirect",
+            "ip": ["geoip:private", "geoip:ir"]
+           },
+           {"type": "field","outboundTag": "mydirect",
+            "protocol": ["bittorrent"]
+           },
+
+           {"type": "field","outboundTag": "mydirect",
+            "network": "udp","protocol": ["quic"]
+           },
+           
+           {"type": "field","outboundTag": "mydirect",
+            "network": "udp","port": 443
+           },
+
+           {"type": "field","outboundTag": "mydirect",
+            "network": "udp"
+           },
+
+           {"type": "field","outboundTag": "mydirect",
+            "port": 25
+           },
+           	                            
+           {"type": "field","outboundTag": "myfragmenttls",
+                "ip": ["geoip:cloudflare"], "network": "tcp"
+           },
+           
+           {"type": "field","outboundTag": "myfragmenttls",
+            "port": "0-65535"
+           }
+  
+      ]
+  },
+    "policy": {
+       "levels": {
+         "0": {
+           "connIdle": 30,
+           "uplinkOnly": 0,
+           "downlinkOnly": 0
+        }
+     }
+  }
+
+}
