@@ -1,4 +1,4 @@
-// config v23 android
+// config v24 android
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -121,6 +121,18 @@
                 }
             }
             
+        },
+
+         {
+            "tag": "mynoises",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIP",
+                "noises": [
+                    {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "1"}, {"type": "rand", "packet": "508", "delay": "10"}
+              ]
+            }
+            
         }
           
   ],"routing": {
@@ -152,12 +164,12 @@
             "protocol": ["bittorrent"]
            },
 
-           {"type": "field","outboundTag": "mydirect",
+           {"type": "field","outboundTag": "mynoises",
             "network": "udp","protocol": ["quic"]
            },
            
-           {"type": "field","outboundTag": "mydirect",
-            "network": "udp","port": 443
+           {"type": "field","outboundTag": "mynoises",
+            "network": "udp","port": "443,51820,1194"
            },
 
            {"type": "field","outboundTag": "mydirect",
