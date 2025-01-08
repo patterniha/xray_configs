@@ -1,4 +1,4 @@
-// config v24 windows
+// config v25 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -192,7 +192,7 @@
     "policy": {
        "levels": {
          "0": {
-           "connIdle": 30,
+           "connIdle": 29,
            "uplinkOnly": 0,
            "downlinkOnly": 0
         }
