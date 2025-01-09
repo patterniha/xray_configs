@@ -1,4 +1,4 @@
-// config v25 windows
+// config v26 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -114,7 +114,7 @@
             "settings": {
                 "domainStrategy": "ForceIP",
                 "fragment": {
-                    "packets": "1-3",
+                    "packets": "1-5",
                     "length": "1",
                     "interval": "1"
                 }
