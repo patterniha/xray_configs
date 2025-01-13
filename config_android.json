@@ -1,4 +1,4 @@
-// config v27 android
+// config v28 android
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -96,7 +96,7 @@
                 "domainStrategy": "ForceIP",
                 "fragment": {
                     "packets": "tlshello",
-                    "length": "8",
+                    "length": "6",
                     "interval": "0"
                 }
             },
