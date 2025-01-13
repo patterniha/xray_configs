@@ -1,4 +1,4 @@
-// config v27 windows
+// config v28 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -95,7 +95,7 @@
                 "domainStrategy": "ForceIP",
                 "fragment": {
                     "packets": "tlshello",
-                    "length": "8",
+                    "length": "6",
                     "interval": "0"
                 }
             },
