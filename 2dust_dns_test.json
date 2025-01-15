@@ -52,11 +52,6 @@
     },
 
     {
-       "protocol": "blackhole",
-       "tag": "block"
-    },
-
-    {
        "protocol": "dns",
        "tag": "dns-out"      
     }
