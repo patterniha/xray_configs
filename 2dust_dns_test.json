@@ -33,20 +33,6 @@
 
   "outbounds": [
     {
-      "tag": "fake-proxy",
-      "protocol": "trojan",
-      "settings": {
-        "servers": [
-                    {
-                        "address": "2.2.2.2",
-                        "port": 443,
-                        "password": "fake"
-                    }
-                   ]
-                  }            
-    },
-  
-    {
        "protocol": "freedom",
        "tag": "direct"
     },
