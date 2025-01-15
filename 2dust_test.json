@@ -1,0 +1,93 @@
+{  
+   "dns":{
+   "servers": [
+                   {"address": "localhost",
+                    "queryStrategy" : ""  // THIS IS PER SERVER QUERY-STRATEGY
+                   }
+              ],
+        
+   "queryStrategy": ""  // THIS IS GLOBAL QUERY-STRATEGY
+
+  },
+  
+  "inbounds": [
+   {
+      "port": 10853,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "8.8.8.8",
+        "port": 53,
+        "network": "tcp,udp"        
+      },
+      "tag": "mydns-in"
+    },
+
+    {
+      "tag": "mysocks-in",
+      "port": 10808,
+      "protocol": "socks",
+      "sniffing": {
+            "enabled": true,
+            "destOverride": ["http", "tls", "quic"],
+            "metadataOnly": false,
+            "routeOnly": true
+                  },
+      "settings": {"udp": true}
+    }
+   
+  ],
+
+  "outbounds": [
+    {
+      "tag": "fake-proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+                    {
+                        "address": "fake.com",
+                        "port": 443,
+                        "password": "fake"
+                    }
+                   ]
+                  }            
+    },
+  
+    {
+       "protocol": "freedom",
+       "tag": "mydirect"
+    },
+
+    {
+       "protocol": "blackhole",
+       "tag": "myblock"
+    },
+
+    {
+       "protocol": "dns",
+       "tag": "mydns-out"      
+    }
+
+                                             
+  ],
+
+  "routing": {
+     "domainStrategy": "AsIs",
+     "rules": [
+           
+           {"type": "field","outboundTag": "mydns-out",
+            "inboundTag": ["mydns-in"]
+           },
+
+           {"type": "field","outboundTag": "mydns-out",
+            "inboundTag": ["mysocks-in"], "port": 53
+           },
+                                                       
+           {"type": "field","outboundTag": "mydirect",
+            "port": "0-65535"
+           }
+  
+      ]
+  }
+    
+
+}
