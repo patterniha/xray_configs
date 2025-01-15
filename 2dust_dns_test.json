@@ -1,0 +1,86 @@
+{  
+   "dns":{
+   "servers": [
+                   {"address": "",
+                    "queryStrategy" : ""  // THIS IS PER SERVER QUERY-STRATEGY
+                   }
+              ],
+        
+   "queryStrategy": ""  // THIS IS GLOBAL QUERY-STRATEGY
+
+  },
+  
+  "inbounds": [
+   {
+      "port": 10853,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "8.8.8.8",
+        "port": 53,
+        "network": "tcp,udp"        
+      },
+      "tag": "dns-in"
+    },
+
+    {
+      "tag": "socks",
+      "port": 10808,
+      "protocol": "socks",      
+      "settings": {"udp": true}
+    }
+   
+  ],
+
+  "outbounds": [
+    {
+      "tag": "fake-proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+                    {
+                        "address": "2.2.2.2",
+                        "port": 443,
+                        "password": "fake"
+                    }
+                   ]
+                  }            
+    },
+  
+    {
+       "protocol": "freedom",
+       "tag": "direct"
+    },
+
+    {
+       "protocol": "blackhole",
+       "tag": "block"
+    },
+
+    {
+       "protocol": "dns",
+       "tag": "dns-out"      
+    }
+                                             
+  ],
+
+  "routing": {
+     "domainStrategy": "AsIs",
+     "rules": [
+           
+           {"type": "field","outboundTag": "dns-out",
+            "inboundTag": ["dns-in"]
+           },
+
+           {"type": "field","outboundTag": "dns-out",
+            "inboundTag": ["socks"], "port": 53
+           },
+                                                       
+           {"type": "field","outboundTag": "direct",
+            "port": "0-65535"
+           }
+  
+      ]
+  }
+    
+
+}
