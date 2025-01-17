@@ -5,7 +5,7 @@
 
    "dns":{
    "servers": [
-                {"address": "tcp://8.8.8.8",
+                {"address": "8.8.8.8",
                  "queryStrategy" : "UseIPv4"  // THIS IS PER SERVER QUERY-STRATEGY
                 }
               ],
