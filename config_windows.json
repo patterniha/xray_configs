@@ -1,4 +1,4 @@
-// config v28 windows
+// config v29 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -141,7 +141,7 @@
             "domain": ["geosite:category-porn", "geosite:category-ads-all"]
            },
            {"type": "field","outboundTag": "myblock",
-            "ip": ["10.10.34.0/24", "2001:4188:2:600:10:10:34:36"]
+            "ip": ["10.10.34.0/24", "2001:4188:2:600:10:10:34:36", "2001:4188:2:600:10:10:34:35"]
            },
            {"type": "field","outboundTag": "mydns-out",
             "inboundTag": ["mydns-in"]
