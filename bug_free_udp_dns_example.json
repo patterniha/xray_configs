@@ -5,7 +5,7 @@
   },
 
    "dns":{
-   "servers": [
+     "servers": [
                 {"address": "8.8.8.8",
                  "queryStrategy" : "UseIPv4"  // correctly returns only the IPv4.
                 }
