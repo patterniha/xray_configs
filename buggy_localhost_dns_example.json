@@ -7,12 +7,10 @@
    "dns":{
    "servers": [
                 {"address": "localhost",
-                 "queryStrategy" : "UseIPv4"  // THIS IS PER SERVER QUERY-STRATEGY, SHOULD BE ONLY RETURN IPV4, BUT RETURN BOTH IPV4 AND IPV6
+                 "queryStrategy" : "UseIPv4"  // SHOULD BE ONLY RETURN IPV4, BUT RETURN BOTH IPV4 AND IPV6
                 }
               ],
         
-   "queryStrategy": "UseIP"  // THIS IS GLOBAL QUERY-STRATEGY
-
   },
   
   "inbounds": [
