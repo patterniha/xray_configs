@@ -1,3 +1,4 @@
+//buggy example
 {
    "log": {
     "loglevel": "debug","dnsLog": true
