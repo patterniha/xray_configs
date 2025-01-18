@@ -1,3 +1,4 @@
+// bug-free example
 {
    "log": {
     "loglevel": "debug","dnsLog": true
@@ -6,7 +7,7 @@
    "dns":{
    "servers": [
                 {"address": "8.8.8.8",
-                 "queryStrategy" : "UseIPv4"  // THIS IS PER SERVER QUERY-STRATEGY
+                 "queryStrategy" : "UseIPv4"  // THIS IS PER SERVER QUERY-STRATEGY, correctly returns only the IPv4.
                 }
               ],
         
