@@ -7,11 +7,10 @@
    "dns":{
    "servers": [
                 {"address": "8.8.8.8",
-                 "queryStrategy" : "UseIPv4"  // THIS IS PER SERVER QUERY-STRATEGY, correctly returns only the IPv4.
+                 "queryStrategy" : "UseIPv4"  // correctly returns only the IPv4.
                 }
-              ],
+              ]
         
-   "queryStrategy": "UseIP"  // THIS IS GLOBAL QUERY-STRATEGY
 
   },
   
