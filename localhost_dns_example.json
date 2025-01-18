@@ -6,7 +6,7 @@
    "dns":{
    "servers": [
                 {"address": "localhost",
-                 "queryStrategy" : "UseIPv4"  // THIS IS PER SERVER QUERY-STRATEGY
+                 "queryStrategy" : "UseIPv4"  // THIS IS PER SERVER QUERY-STRATEGY, SHOULD BE ONLY RETURN IPV4, BUT RETURN BOTH IPV4 AND IPV6
                 }
               ],
         
