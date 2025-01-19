@@ -1,4 +1,4 @@
-// config v29 windows
+// config v30 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -29,7 +29,6 @@
       "sniffing": {
             "enabled": true,
             "destOverride": ["http", "tls", "quic"],
-            "metadataOnly": false,
             "routeOnly": true
                   },
       "settings": {"udp": true}
