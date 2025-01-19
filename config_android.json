@@ -1,4 +1,4 @@
-// config v31 android
+// config v32 android
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -115,7 +115,7 @@
                 "domainStrategy": "ForceIP",
                 "fragment": {
                     "packets": "1-5",
-                    "length": "3",
+                    "length": "5",
                     "interval": "1"
                 }
             }
