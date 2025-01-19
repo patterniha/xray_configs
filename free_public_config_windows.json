@@ -1,4 +1,4 @@
-// free config v29 windows
+// free config windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -30,8 +30,7 @@
       "sniffing": {
             "enabled": true,
             "destOverride": ["http", "tls", "quic"],
-            "metadataOnly": false,
-            "routeOnly": true
+            "routeOnly": false
                   },
       "settings": {"udp": true}
     }
