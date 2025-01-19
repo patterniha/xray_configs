@@ -36,21 +36,7 @@
     }
    
   ],
-  "outbounds": [
-    {
-      "tag": "myproxy",
-      "protocol": "trojan",
-      "settings": {
-        "servers": [
-                    {
-                        "address": "www.zula.ir",
-                        "port": 443,
-                        "password": "1"
-                    }
-                ]
-      }
-            
-    },  
+  "outbounds": [    
         {
             "protocol": "freedom",
             "tag": "mydirect",
