@@ -1,4 +1,4 @@
-// config v29 android
+// config v30 android
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -30,7 +30,6 @@
       "sniffing": {
             "enabled": true,
             "destOverride": ["http", "tls", "quic"],
-            "metadataOnly": false,
             "routeOnly": true
                   },
       "settings": {"udp": true}
