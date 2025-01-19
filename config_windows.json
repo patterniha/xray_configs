@@ -1,4 +1,4 @@
-// config v31 windows
+// config v32 windows
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -114,7 +114,7 @@
                 "domainStrategy": "ForceIP",
                 "fragment": {
                     "packets": "1-5",
-                    "length": "3",
+                    "length": "5",
                     "interval": "1"
                 }
             }
