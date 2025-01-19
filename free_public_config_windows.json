@@ -1,4 +1,4 @@
-// free config windows
+// free config windows v1
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -82,7 +82,7 @@
                 "domainStrategy": "ForceIP",
                 "fragment": {
                     "packets": "1-5",
-                    "length": "3",
+                    "length": "5",
                     "interval": "1"
                 }
             }
