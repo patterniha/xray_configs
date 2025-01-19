@@ -1,4 +1,4 @@
-// free config v29 android
+// free config android
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -31,8 +31,7 @@
       "sniffing": {
             "enabled": true,
             "destOverride": ["http", "tls", "quic"],
-            "metadataOnly": false,
-            "routeOnly": true
+            "routeOnly": false
                   },
       "settings": {"udp": true}
     }
