@@ -1,4 +1,4 @@
-// free config android v2
+// free config android v3
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -96,7 +96,7 @@
             "settings": {
                 "domainStrategy": "ForceIP",
                 "noises": [
-                    {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "10"}
+                    {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "2"}, {"type": "rand", "packet": "1232", "delay": "20"}
               ]
             }
             
