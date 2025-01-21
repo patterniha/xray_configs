@@ -1,21 +1,14 @@
-//buggy example
+
 {
    "log": {
     "loglevel": "debug","dnsLog": true
-  },
-   
+  },   
    "dns":{
-     "servers": [
-                {"address": "localhost",
-                 "queryStrategy" : "UseIPv4"  // SHOULD BE ONLY RETURN IPV4, BUT RETURN BOTH IPV4 AND IPV6
-                }
-              ]
-        
+     "servers": ["localhost"]        
   },
-  
   "inbounds": [
    {
-      "port": 10853,
+      "port": 53,
       "protocol": "dokodemo-door",
       "settings": {
         "address": "8.8.8.8",
@@ -27,7 +20,7 @@
 
     {
       "tag": "socks",
-      "port": 10808,
+      "port": 1080,
       "protocol": "socks",      
       "settings": {"udp": true}
     }
@@ -36,12 +29,19 @@
 
   "outbounds": [
     {
-       "protocol": "freedom",
-       "tag": "direct",
-       "settings": {
-        "domainStrategy": "ForceIP"
-       }
-    },
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+                    {
+                        "address": "example.ir",
+                        "port": 443,
+                        "password": "1"
+                    }
+                ]
+      }
+            
+    },  
 
     {
        "protocol": "dns",
@@ -62,7 +62,7 @@
             "inboundTag": ["socks"], "port": 53
            },
                                                        
-           {"type": "field","outboundTag": "direct",
+           {"type": "field","outboundTag": "proxy",
             "port": "0-65535"
            }
   
