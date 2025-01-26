@@ -1,4 +1,4 @@
-// free config windows v6
+// free config windows v7
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -115,7 +115,7 @@
            {"type": "field","outboundTag": "mydns-out",
             "inboundTag": ["mysocks-in"], "port": 53
            },
-           {"type": "field","outboundTag": "mydirect",
+           {"type": "field","outboundTag": "myfragmenttls",
             "inboundTag": ["mydnsQuery"]
            },
            
