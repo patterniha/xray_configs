@@ -1,0 +1,160 @@
+// free config windows v5
+{
+  "log": {
+    "loglevel": "warning","dnsLog": false
+  },
+   "dns":{"hosts": {
+"geosite:category-porn": ["10.10.34.36","2001:4188:2:600:10:10:34:36"],
+"geosite:category-ads-all": ["10.10.34.36","2001:4188:2:600:10:10:34:36"]
+},
+"servers": ["https://8.8.8.8/dns-query"            
+], "tag": "mydnsQuery","disableFallback": true
+},
+  
+  "inbounds": [
+   {
+      "port": 12353,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "8.8.8.8",
+        "port": 53,
+        "network": "tcp,udp"        
+      },
+      "tag": "mydns-in"
+    },
+    {
+      "tag": "mysocks-in",
+      "port": 12308,
+      "protocol": "socks",
+      "sniffing": {
+            "enabled": true,
+            "destOverride": ["http", "tls", "quic"],
+            "routeOnly": false
+                  },
+      "settings": {"udp": true}
+    }
+   
+  ],
+  "outbounds": [    
+        {
+            "protocol": "freedom",
+            "tag": "mydirect",
+            "settings": {"domainStrategy": "ForceIP"}
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "myblock"
+        },{
+      "protocol": "dns",
+      "tag": "mydns-out",
+      "settings": { "nonIPQuery": "skip", "network": "tcp", "address": "8.8.8.8", "port": 53},
+      "streamSettings": {
+                "sockopt": {
+                    "dialerProxy": "myfragmenttls"
+                   }
+            }
+          },
+
+         {
+            "tag": "myfragmenttls",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIP",
+                "fragment": {
+                    "packets": "tlshello",
+                    "length": "6",
+                    "interval": "0"
+                }
+            },
+          "streamSettings": {
+                "sockopt": {
+                    "dialerProxy": "myfragmenttcp"
+                   }
+            }
+            
+        },
+         
+         {
+            "tag": "myfragmenttcp",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIP",
+                "fragment": {
+                    "packets": "1-5",
+                    "length": "1",
+                    "interval": "1"
+                }
+            }
+            
+        },
+
+         {
+            "tag": "mynoises",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "ForceIP",
+                "noises": [
+                    {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "1"}, {"type": "rand", "packet": "1232", "delay": "100"}
+              ]
+            }
+            
+        }
+          
+  ],"routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+           {"type": "field","outboundTag": "myblock",
+            "domain": ["geosite:category-porn", "geosite:category-ads-all"]
+           },
+           {"type": "field","outboundTag": "myblock",
+            "ip": ["10.10.34.0/24", "2001:4188:2:600:10:10:34:36", "2001:4188:2:600:10:10:34:35"]
+           },
+           {"type": "field","outboundTag": "mydns-out",
+            "inboundTag": ["mydns-in"]
+           },
+           {"type": "field","outboundTag": "mydns-out",
+            "inboundTag": ["mysocks-in"], "port": 53
+           },
+           {"type": "field","outboundTag": "mydirect",
+            "inboundTag": ["mydnsQuery"]
+           },
+           
+           {"type": "field","outboundTag": "mydirect",
+                "domain": ["geosite:private", "ext:iran.dat:all", "geosite:category-ir"] 
+           },
+           {"type": "field","outboundTag": "mydirect",
+            "ip": ["geoip:private", "geoip:ir"]
+           },
+           {"type": "field","outboundTag": "mydirect",
+            "protocol": ["bittorrent"]
+           },
+
+           {"type": "field","outboundTag": "mynoises",
+            "network": "udp","protocol": ["quic"]
+           },
+           
+           {"type": "field","outboundTag": "mynoises",
+            "network": "udp","port": "443,51820,1194"
+           },
+
+           {"type": "field","outboundTag": "mydirect",
+            "network": "udp"
+           },
+                      	                                                  
+           {"type": "field","outboundTag": "myfragmenttls",
+            "port": "0-65535"
+           }
+  
+      ]
+  },
+    "policy": {
+       "levels": {
+         "0": {
+           "connIdle": 29,
+           "uplinkOnly": 0,
+           "downlinkOnly": 0
+        }
+     }
+  }
+
+}
