@@ -1,4 +1,4 @@
-// free config android v14
+// free config android v15
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -23,6 +23,9 @@
 "z-p42-chat-e2ee-ig.facebook.com": "z-p42-chat-e2ee-ig-fallback.facebook.com",
 "edge-chat.instagram.com": "edge-chat-fallback.instagram.com",
 "static.xx.fbcdn.net": "static-fallback.xx.fbcdn.net",
+"scontent.xx.fbcdn.net": "scontent-fallback.xx.fbcdn.net",
+"z-m-static.xx.fbcdn.net": "z-m-static-fallback.xx.fbcdn.net",
+"z-m-scontent.xx.fbcdn.net": "z-m-scontent-fallback.xx.fbcdn.net",
 "static.cdninstagram.com": "static-fallback.cdninstagram.com",
 "api.instagram.com": "api-fallback.instagram.com",
 "iglite-z.instagram.com": "iglite-z-fallback.instagram.com",
