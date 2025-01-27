@@ -1,4 +1,4 @@
-// free config android v8
+// free config android v9
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -7,6 +7,8 @@
 "i.instagram.com": "i-fallback.instagram.com",
 "graph.instagram.com": "graph-fallback.instagram.com",
 "b.i.instagram.com": "b-fallback.i.instagram.com",
+"instagram.com": "b-fallback.i.instagram.com",
+"www.instagram.com": "b-fallback.i.instagram.com",
 "graphql.instagram.com": "graphql-fallback.instagram.com",
 "gateway.instagram.com": "gateway-fallback.instagram.com",
 "domain:cdninstagram.com": "scontent-fallback.cdninstagram.com",
