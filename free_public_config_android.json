@@ -1,4 +1,4 @@
-// free config android v9
+// free config android v10
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -9,9 +9,16 @@
 "b.i.instagram.com": "b-fallback.i.instagram.com",
 "instagram.com": "b-fallback.i.instagram.com",
 "www.instagram.com": "b-fallback.i.instagram.com",
+"edge-chat.instagram.com": "edge-chat-fallback.instagram.com",
+"static.xx.fbcdn.net": "static-fallback.xx.fbcdn.net",
+"static.cdninstagram.com": "static-fallback.cdninstagram.com",
+"api.instagram.com": "api-fallback.instagram.com",
+"iglite-z.instagram.com": "iglite-z-fallback.instagram.com",
+"about.instagram.com": "about-fallback.instagram.com",
+"reg-e2ee.instagram.com": "reg-e2ee-fallback.instagram.com",
 "graphql.instagram.com": "graphql-fallback.instagram.com",
 "gateway.instagram.com": "gateway-fallback.instagram.com",
-"domain:cdninstagram.com": "scontent-fallback.cdninstagram.com",
+"regexp:^scontent.*\\.cdninstagram\\.com$": "scontent-fallback.cdninstagram.com",
 "geosite:category-porn": ["10.10.34.36","2001:4188:2:600:10:10:34:36"],
 "geosite:category-ads-all": ["10.10.34.36","2001:4188:2:600:10:10:34:36"]
 },
