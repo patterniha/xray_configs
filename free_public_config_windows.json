@@ -1,4 +1,4 @@
-// free config windows v13
+// free config windows v14
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -20,6 +20,7 @@
 "b-www.facebook.com": "b-www-fallback.facebook.com",
 "lookaside.facebook.com": "lookaside-fallback.facebook.com",
 "web.facebook.com": "web-fallback.facebook.com",
+"z-p42-chat-e2ee-ig.facebook.com": "z-p42-chat-e2ee-ig-fallback.facebook.com",
 "edge-chat.instagram.com": "edge-chat-fallback.instagram.com",
 "static.xx.fbcdn.net": "static-fallback.xx.fbcdn.net",
 "static.cdninstagram.com": "static-fallback.cdninstagram.com",
