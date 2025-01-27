@@ -1,4 +1,4 @@
-// free config android v15
+// free config android v16
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -20,6 +20,11 @@
 "b-www.facebook.com": "b-www-fallback.facebook.com",
 "lookaside.facebook.com": "lookaside-fallback.facebook.com",
 "web.facebook.com": "web-fallback.facebook.com",
+"api.facebook.com": "api-fallback.facebook.com",
+"b-api.facebook.com": "b-api-fallback.facebook.com",
+"b-graph.facebook.com": "b-graph-fallback.facebook.com",
+"gateway.facebook.com": "gateway-fallback.facebook.com",
+"mobile.facebook.com": "mobile-fallback.facebook.com",
 "z-p42-chat-e2ee-ig.facebook.com": "z-p42-chat-e2ee-ig-fallback.facebook.com",
 "edge-chat.instagram.com": "edge-chat-fallback.instagram.com",
 "static.xx.fbcdn.net": "static-fallback.xx.fbcdn.net",
