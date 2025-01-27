@@ -1,4 +1,4 @@
-// free config android v11
+// free config android v13
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -9,6 +9,17 @@
 "b.i.instagram.com": "b-fallback.i.instagram.com",
 "instagram.com": "www-fallback.instagram.com",
 "www.instagram.com": "www-fallback.instagram.com",
+"m.instagram.com": "m-fallback.instagram.com",
+"facebook.com": "www-fallback.facebook.com",
+"www.facebook.com": "www-fallback.facebook.com",
+"m.facebook.com": "m-fallback.facebook.com",
+"graph.facebook.com": "graph-fallback.facebook.com",
+"connect.facebook.com": "connect-fallback.facebook.com",
+"edge-mqtt.facebook.com": "edge-mqtt-fallback.facebook.com",
+"mqtt-mini.facebook.com": "mqtt-mini-fallback.facebook.com",
+"b-www.facebook.com": "b-www-fallback.facebook.com",
+"lookaside.facebook.com": "lookaside-fallback.facebook.com",
+"web.facebook.com": "web-fallback.facebook.com",
 "edge-chat.instagram.com": "edge-chat-fallback.instagram.com",
 "static.xx.fbcdn.net": "static-fallback.xx.fbcdn.net",
 "static.cdninstagram.com": "static-fallback.cdninstagram.com",
