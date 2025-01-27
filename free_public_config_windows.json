@@ -1,4 +1,4 @@
-// free config windows v10
+// free config windows v11
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -7,8 +7,8 @@
 "i.instagram.com": "i-fallback.instagram.com",
 "graph.instagram.com": "graph-fallback.instagram.com",
 "b.i.instagram.com": "b-fallback.i.instagram.com",
-"instagram.com": "b-fallback.i.instagram.com",
-"www.instagram.com": "b-fallback.i.instagram.com",
+"instagram.com": "www-fallback.instagram.com",
+"www.instagram.com": "www-fallback.instagram.com",
 "edge-chat.instagram.com": "edge-chat-fallback.instagram.com",
 "static.xx.fbcdn.net": "static-fallback.xx.fbcdn.net",
 "static.cdninstagram.com": "static-fallback.cdninstagram.com",
