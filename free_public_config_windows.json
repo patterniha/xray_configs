@@ -1,4 +1,4 @@
-// free config windows v17
+// free config windows v18
 {
   "log": {
     "loglevel": "warning","dnsLog": false
@@ -20,6 +20,8 @@
 "b-www.facebook.com": "b-www-fallback.facebook.com",
 "lookaside.facebook.com": "lookaside-fallback.facebook.com",
 "web.facebook.com": "web-fallback.facebook.com",
+"payments-graph.facebook.com": "payments-graph-fallback.facebook.com",
+"chat-e2ee-mini.facebook.com": "chat-e2ee-mini-fallback.facebook.com",
 "api.facebook.com": "api-fallback.facebook.com",
 "b-api.facebook.com": "b-api-fallback.facebook.com",
 "b-graph.facebook.com": "b-graph-fallback.facebook.com",
