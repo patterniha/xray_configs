@@ -2,10 +2,6 @@ XRAY CORE:
 
     https://github.com/XTLS/Xray-core/releases/latest/download/Xray-windows-64.zip
 
-WINDOWS CONFIG:
-
-    https://raw.githubusercontent.com/patterniha/xray_configs/refs/heads/main/config_windows.json
-
 GEO FILES:
     
     https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
