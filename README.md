@@ -1,7 +1,7 @@
 # Serverless config for iran
 
 
-With [serverless_config_for_iran](https://github.com/patterniha/xray_configs/blob/main/serverless_config_for_iran) all services except telegram are accessible in iran without using any server.
+With [serverless_config_for_iran](https://github.com/patterniha/xray_configs/blob/main/serverless_config_for_iran.json) all services except telegram are accessible in iran without using any server.
 
 Although websites that have Sanctioned Iran are not accessible with serverless methods.
 
