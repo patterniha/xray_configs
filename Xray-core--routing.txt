@@ -75,7 +75,7 @@ Xray-core routing:
 				
 	    State 3.3.4: no rule is matched:
 			    
-		The Domain is resolved to IP(IP-list)
+		The Domain is resolved to IP(IP-list) and check again
 					
 		State 3.3.4.1: an ip-rule is matched:
 			
