@@ -1,95 +1,94 @@
-
-   Xray-core routing:
+Xray-core routing:
    
-        State 1: The entry address is an IP:
+    State 1: The entry address is an IP:
 	    
-	        That IP is always used in the outbound.
-		   
-		
-	    State 2: the entry address is an IP with a domain:
+        That IP is always used in the outbound.
+
+////
+		   	
+    State 2: the entry address is an IP with a domain:
 		    
-			This happens when the initial-entry-address is an IP and Sniffing is on and "use-sniffed-domain-in-routing" is true
+	This happens when the initial-entry-address in inbound is an IP and Sniffing is on and "use-sniffed-domain-in-routing" is true
 			
-			State 2.1: an ip-rule is matched:
+	State 2.1: an ip-rule is matched:
 			
-			    The IP used in outbound unless "use-domain" is true.
+	    The IP used in outbound unless "use-domain" is true.
 			
-			State 2.2: a domain-rule is matched:
+	State 2.2: a domain-rule is matched:
 			    
-				The Domain is used in outbound unless "use-ip" is true.
+	    The Domain is used in outbound unless "use-ip" is true.
 				
-		    State 2.3: a non-ip/domain-rule is matched:
+	State 2.3: a non-ip/domain-rule is matched:
 			    
-				The IP is used in outbound unless "use-domain" is true.
+	    The IP is used in outbound unless "use-domain" is true.
 				
-			State 2.4: no rule is matched:
+	State 2.4: no rule is matched:
 			    
-				The IP is used in outbound (first-outbound).
-				
-				
-			
-		State 3: the entry address is a domain:
-		
-		    State 3.1: the domainStrategy is AsIs:
-			
-			    That domain is always used in the outbound.
-				
-				
-			State 3.2: the domainStrategy is IPOnDemand:
-			
-			    At the first encounter with an IP-rule or a rule whose "use-ip" is true, the domain is resolved to IP(IP-list).
-				
-				By encountering each rule the domain and all ips in ip-list is checked.
-				
-			    State 3.2.1: an ip-rule is matched:
-			
-			        The first IP of the IP-list that has matched the rule is used in outbound, unless "use-domain" is true.
-			
-			    State 3.2.2: a domain-rule is matched:
-			    
-				    The Domain is used in outbound unless "use-ip" is true and IP-list is not empty.					
-				
-		        State 3.2.3: a non-ip/domain-rule is matched:
-			    
-				    The Domain is used in outbound unless "use-ip" is true and IP-list is not empty.
-				
-			    State 3.2.4: no rule is matched:
-			    
-				    The Domain is used in outbound (first-outbound).
-				
-				
-			State 3.3: the domainStrategy is IPIfNonMatch:
-			
-			    if no rule is matched, the domain is resolved to IP(IP-list).
-				
-				State 3.3.1: an IP-rule is matched:
-			    
-				    Impossible!				
-											    			
-			    State 3.3.2: a domain-rule is matched:
-			    
-				    The Domain is always used in outbound					
-				
-		        State 3.3.3: a non-ip/domain-rule is matched:
-			    
-				    The Domain is always used in outbound
-				
-			    State 3.2.4: no rule is matched:
-			    
-				    The Domain is resolved to IP(IP-list)
+	    The IP is used in outbound (first-outbound).
+
+////
 					
-					State 3.2.4.1: an ip-rule is matched:
+    State 3: the entry address is a domain:
+		
+        State 3.1: the domainStrategy is AsIs:
 			
-			            The first IP of the IP-list that has matched the rule is used in outbound, unless "use-domain" is true.
+	    That domain is always used in the outbound.
+						
+	State 3.2: the domainStrategy is IPOnDemand:
 			
-			        State 3.2.4.2: a domain-rule is matched:
-			    
-				        The Domain is used in outbound unless "use-ip" is true and IP-list is not empty.					
+	    At the first encounter with an IP-rule or a rule whose "use-ip" is true, the domain is resolved to IP(IP-list).
 				
-		            State 3.2.4.3: a non-ip/domain-rule is matched:
-			    
-				        Impossible!
+	    By encountering each rule the domain and all ips in ip-list is checked.
 				
-			        State 3.2.4.4: no rule is matched:
+	    State 3.2.1: an ip-rule is matched:
+			
+		The first IP of the IP-list that has matched the rule is used in outbound, unless "use-domain" is true.
+			
+	    State 3.2.2: a domain-rule is matched:
 			    
-				        The Domain is used in outbound (first-outbound).
+		The Domain is used in outbound unless "use-ip" is true and IP-list is not empty.					
+				
+	    State 3.2.3: a non-ip/domain-rule is matched:
+			    
+		The Domain is used in outbound unless "use-ip" is true and IP-list is not empty.
+				
+	    State 3.2.4: no rule is matched:
+			    
+		The Domain is used in outbound (first-outbound).
+				
+				
+	State 3.3: the domainStrategy is IPIfNonMatch:
+			
+	    if no rule is matched, the domain is resolved to IP(IP-list).
+				
+	    State 3.3.1: an IP-rule is matched:
+			    
+	        Impossible!				
+											    			
+	    State 3.3.2: a domain-rule is matched:
+			    
+		The Domain is always used in outbound					
+				
+	    State 3.3.3: a non-ip/domain-rule is matched:
+			    
+		The Domain is always used in outbound
+				
+	    State 3.3.4: no rule is matched:
+			    
+		The Domain is resolved to IP(IP-list)
+					
+		State 3.3.4.1: an ip-rule is matched:
+			
+		    The first IP of the IP-list that has matched the rule is used in outbound, unless "use-domain" is true.
+			
+		State 3.3.4.2: a domain-rule is matched:
+			    
+		    The Domain is used in outbound unless "use-ip" is true and IP-list is not empty.					
+				
+		State 3.3.4.3: a non-ip/domain-rule is matched:
+			    
+		    Impossible!
+				
+		State 3.3.4.4: no rule is matched:
+			    
+		    The Domain is used in outbound (first-outbound).
