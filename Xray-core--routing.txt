@@ -1,12 +1,12 @@
 Xray-core routing:
    
-    State 1: The entry address is an IP:
+    State 1: The routing entry address is an IP:
 	    
         That IP is always used in the outbound.
 
 ////
 		   	
-    State 2: the entry address is an IP with a domain:
+    State 2: The routing entry address is an IP with a domain:
 		    
 	This happens when the initial-entry-address in inbound is an IP and Sniffing is on and "use-sniffed-domain-in-routing" is true
 			
@@ -28,7 +28,7 @@ Xray-core routing:
 
 ////
 					
-    State 3: the entry address is a domain:
+    State 3: The routing entry address is a domain:
 		
         State 3.1: the domainStrategy is AsIs:
 			
