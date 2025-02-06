@@ -83,7 +83,7 @@ Xray-core routing:
 			
 		State 3.3.4.2: a domain-rule is matched:
 			    
-		    Impossible!.					
+		    Impossible!					
 				
 		State 3.3.4.3: a non-ip/domain-rule is matched:
 			    
