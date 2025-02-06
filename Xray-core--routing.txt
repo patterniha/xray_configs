@@ -83,7 +83,7 @@ Xray-core routing:
 			
 		State 3.3.4.2: a domain-rule is matched:
 			    
-		    The Domain is used in outbound unless "use-ip" is true and IP-list is not empty.					
+		    Impossible!.					
 				
 		State 3.3.4.3: a non-ip/domain-rule is matched:
 			    
