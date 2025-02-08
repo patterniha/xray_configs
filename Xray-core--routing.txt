@@ -36,7 +36,7 @@ Xray-core routing:
 						
 	State 3.2: the domainStrategy is IPOnDemand:
 			
-	    At the first encounter with an IP-rule or a rule whose "ipOverride" is true, the domain is resolved to IP(IP-list).
+	    At the first encounter with an IP-rule, the domain is resolved to IP(IP-list).
 				
 	    By encountering each rule the domain and all ips in ip-list is checked.
 				
