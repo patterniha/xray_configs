@@ -21,8 +21,12 @@ Xray-core routing:
 	State 2.3: a non-ip/domain-rule is matched:
 			    
 	    The IP is used in outbound unless "domainOverride" is true.
+
+        State 2.4: a both-ip-domain-rule is matched:
+			    
+	    The IP is used in outbound unless "domainOverride" is true.
 				
-	State 2.4: no rule is matched:
+	State 2.5: no rule is matched:
 			    
 	    The IP is used in outbound (first-outbound).
 
@@ -36,7 +40,7 @@ Xray-core routing:
 						
 	State 3.2: the domainStrategy is IPOnDemand:
 			
-	    At the first encounter with an IP-rule or a rule whose "ipOverride" is true, the domain is resolved to IP(IP-list).
+	    At the first encounter with an IP-rule, the domain is resolved to IP(IP-list).
 				
 	    By encountering each rule the domain and all ips in ip-list is checked.
 				
@@ -46,13 +50,17 @@ Xray-core routing:
 			
 	    State 3.2.2: a domain-rule is matched:
 			    
-		The Domain is used in outbound unless "ipOverride" is true and IP-list is not empty.					
+		The Domain is used in outbound.					
 				
 	    State 3.2.3: a non-ip/domain-rule is matched:
 			    
-		The Domain is used in outbound unless "ipOverride" is true and IP-list is not empty.
+		The Domain is used in outbound.
+
+            State 3.2.4: a both-ip-domain-rule is matched:
+			    
+		The Domain is used in outbound, unless "overrideIP" is true.
 				
-	    State 3.2.4: no rule is matched:
+	    State 3.2.5: no rule is matched:
 			    
 		The Domain is used in outbound (first-outbound).
 				
@@ -72,23 +80,31 @@ Xray-core routing:
 	    State 3.3.3: a non-ip/domain-rule is matched:
 			    
 		The Domain is always used in outbound
+
+            State 3.3.4: a both-ip-domain-rule is matched:
+			    
+		Impossible!
 				
-	    State 3.3.4: no rule is matched:
+	    State 3.3.5: no rule is matched:
 			    
 		Now, The Domain is resolved to IP(IP-list) and check again
 					
-		State 3.3.4.1: an ip-rule is matched:
+		State 3.3.5.1: an ip-rule is matched:
 			
 		    The first IP of the IP-list that has matched the rule is used in outbound, unless "domainOverride" is true.
 			
-		State 3.3.4.2: a domain-rule is matched:
+		State 3.3.5.2: a domain-rule is matched:
 			    
 		    Impossible!					
 				
-		State 3.3.4.3: a non-ip/domain-rule is matched:
+		State 3.3.5.3: a non-ip/domain-rule is matched:
 			    
 		    Impossible!
+
+                State 3.3.5.4: a both-ip-domain-rule is matched:
+			    
+		    The Domain is used in outbound, unless "overrideIP" is true.
 				
-		State 3.3.4.4: no rule is matched:
+		State 3.3.5.5: no rule is matched:
 			    
 		    The Domain is used in outbound (first-outbound).
