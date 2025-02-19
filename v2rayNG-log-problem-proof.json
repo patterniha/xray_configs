@@ -162,7 +162,7 @@
       {"outboundTag": "direct",
        "ip": ["geoip:private", "geoip:ir"]
       },                                                         	                                                        
-      {"outboundTag": "udp-noises",
+      {"outboundTag": "block",
        "network": "udp"
       },
       {"outboundTag": "chain1-fragment",
