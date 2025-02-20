@@ -10,7 +10,7 @@
   },
   
   "dns": {
-    "servers": ["h2c://8.8.8.8/dns-query"],
+    "servers": ["h2c://1.1.1.1/dns-query"],
     "tag": "dns-query"
   },
   
@@ -80,7 +80,7 @@
         "security": "tls",
         "tlsSettings": {
           "serverName": "www.bing.com",
-          "serverNameToVerify": "8.8.8.8",
+          "verifyPeerCertInNames": ["fromMitM"],
           "alpn": ["h2", "http/1.1"],
           "fingerprint": "chrome"
         }
