@@ -1,0 +1,7 @@
+08:01:16.743909 ens33 In  IP 192.168.1.135.10081 > 192.168.1.57.9443: Flags [S], seq 3260841409, win 65535, options [mss 1460,nop,wscale 8,nop,nop,sackOK], length 0
+08:01:16.744119 ens33 Out IP 192.168.1.57.9443 > 192.168.1.135.10081: Flags [S.], seq 641274632, ack 3260841410, win 64240, options [mss 1460,nop,nop,sackOK,nop,wscale 7], length 0
+08:01:16.744734 ens33 In  IP 192.168.1.135.10081 > 192.168.1.57.9443: Flags [.], ack 1, win 255, length 0
+08:01:28.746108 ens33 In  IP 192.168.1.135.10081 > 192.168.1.57.9443: Flags [P.], seq 1:17, ack 1, win 255, length 16
+08:01:28.746110 ens33 In  IP 192.168.1.135.10081 > 192.168.1.57.9443: Flags [P.], seq 17:19, ack 1, win 255, length 2
+08:01:28.746141 ens33 Out IP 192.168.1.57.9443 > 192.168.1.135.10081: Flags [.], ack 17, win 502, length 0
+08:01:28.746332 ens33 Out IP 192.168.1.57.9443 > 192.168.1.135.10081: Flags [.], ack 19, win 502, length 0
