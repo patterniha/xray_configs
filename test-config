@@ -1,0 +1,21 @@
+{
+  "inbounds": [ 
+    {
+      "tag": "test-in",
+      "port": 10853,     
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "192.168.1.57",
+        "port": 9443,
+        "network": "tcp"        
+      }      
+    }   
+  ],
+
+  "outbounds": [    
+    {
+      "tag": "test-out",
+      "protocol": "freedom"          
+    }            
+  ]
+}
